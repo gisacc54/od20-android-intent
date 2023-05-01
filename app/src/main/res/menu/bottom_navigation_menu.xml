@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/calculator"
+        android:title="@string/calculator"
+        android:icon="@drawable/calculator_variant"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/phoneCall"
+        android:title="@string/phone_call"
+        android:icon="@drawable/phone_dial"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/sendSms"
+        android:title="@string/send_sms"
+        android:icon="@drawable/message"
+        android:enabled="true"/>
+</menu>

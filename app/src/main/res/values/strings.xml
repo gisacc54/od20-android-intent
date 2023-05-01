@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Intent</string>
+    <string name="calculator">Calculator</string>
+    <string name="phone_call">Phone Call</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="phone_call_activity">Phone Call Activity</string>
+    <string name="calculator_activity">Calculator Activity</string>
+    <string name="send_sms_activity">Send SMS Activity</string>
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="textHeader1" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="textHeader2" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="textNormal" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">@dimen/text_sm</item>
+    </style>
+</resources>

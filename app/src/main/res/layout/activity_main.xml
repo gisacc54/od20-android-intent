@@ -9,12 +9,78 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingHorizontal="10dp"
-        android:paddingVertical="15dp">
+        android:paddingVertical="15dp"
+        android:orientation="vertical">
         <TextView
-            style="@style/textHeader1"
+            style="@style/textHeader2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/calculator_activity"/>
+            android:text="@string/enter_two_number"/>
+        <EditText
+            android:id="@+id/etFirstNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_first_number"
+            android:layout_marginVertical="10dp"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/etSecondNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_second_number"
+            android:layout_marginVertical="10dp"
+            android:inputType="number"/>
+        <TextView
+            style="@style/textHeader2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="@string/answer"/>
+        <TextView
+            android:id="@+id/tvAnswer"
+            style="@style/textHeader1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="20dp">
+            <Button
+                android:id="@+id/btnPlus"
+                style="@style/textHeader1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus"/>
+            <Button
+                android:id="@+id/btnMinus"
+                style="@style/textHeader1"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/btnTimes"
+                style="@style/textHeader1"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/times"/>
+            <Button
+                android:id="@+id/btnDivide"
+                style="@style/textHeader1"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/divide"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear"
+            android:backgroundTint="@color/red"
+            android:textColor="@color/white"/>
     </LinearLayout>
     <include
         layout="@layout/bottom_nav"/>

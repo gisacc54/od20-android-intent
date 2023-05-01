@@ -6,4 +6,12 @@
     <string name="phone_call_activity">Phone Call Activity</string>
     <string name="calculator_activity">Calculator Activity</string>
     <string name="send_sms_activity">Send SMS Activity</string>
+    <string name="enter_two_number">Enter Two Number</string>
+    <string name="enter_first_number">Enter first number</string>
+    <string name="enter_second_number">Enter Second Number</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="times">×</string>
+    <string name="divide">÷</string>
+    <string name="answer">Answer:</string>
 </resources>

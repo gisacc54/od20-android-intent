@@ -2,8 +2,12 @@ package com.example.intent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,6 +22,7 @@ public class PhoneCallActivity extends AppCompatActivity implements NavigationVi
 
     public EditText etPhoneNumber;
     public Button btnCall;
+    private static final int MY_PERMISSIONS_REQUEST =0 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,13 +46,26 @@ public class PhoneCallActivity extends AppCompatActivity implements NavigationVi
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnCall){
-            if (etPhoneNumber.getText().length()>2){
-                String phoneNumber = etPhoneNumber.getText().toString();
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:"+phoneNumber));
-                startActivity(callIntent);
+            if (this.checkPermission()){
+                if (etPhoneNumber.getText().length()>2){
+                    String phoneNumber = etPhoneNumber.getText().toString();
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:"+phoneNumber));
+                    startActivity(callIntent);
+                }
             }
         }
+    }
+
+    public boolean checkPermission(){
+        if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+
+            return false;
+
+        }
+        return true;
     }
 
     @Override

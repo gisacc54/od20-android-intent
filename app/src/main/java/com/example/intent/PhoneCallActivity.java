@@ -46,11 +46,13 @@ public class PhoneCallActivity extends AppCompatActivity implements NavigationVi
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnCall){
-            if (etPhoneNumber.getText().length()>2){
-                String phoneNumber = etPhoneNumber.getText().toString();
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:"+phoneNumber));
-                startActivity(callIntent);
+            if (this.checkPermission()){
+                if (etPhoneNumber.getText().length()>2){
+                    String phoneNumber = etPhoneNumber.getText().toString();
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:"+phoneNumber));
+                    startActivity(callIntent);
+                }
             }
         }
     }

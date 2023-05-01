@@ -2,8 +2,12 @@ package com.example.intent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class PhoneCallActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
+    private static final int MY_PERMISSIONS_REQUEST =0 ;
     public EditText etPhoneNumber;
     public Button btnCall;
     @Override
@@ -48,6 +53,17 @@ public class PhoneCallActivity extends AppCompatActivity implements NavigationVi
                 startActivity(callIntent);
             }
         }
+    }
+
+    public boolean checkPermission(){
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+
+            return false;
+
+        }
+        return true;
     }
 
     @Override
